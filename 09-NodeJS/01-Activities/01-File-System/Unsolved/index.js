@@ -6,7 +6,7 @@ fs.writeFile("log.txt", process.argv[2], function(err) {
     return console.log(err);
   }
 
-  console.log("Done!");
+  console.log("stuff");
 
 });
 

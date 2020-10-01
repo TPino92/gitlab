@@ -1,20 +1,38 @@
 // Create a constructor function called `Character` that takes in 3 arguments: `name`, `strength`, `hitpoints`
-// YOUR CODE HERE
-//
+function Character(name, strength, hitpoints) {
+    this.name = name;
+    this.strength = strength;
+    this.hitpoints = hitpoints;
+}
 
 // Create a prototype method called `printStats()` which prints all of the stats for a character
-// YOUR CODE HERE
-//
+Character.prototype.printStats = function() {
+    console.log(
+        'Name: ' + 
+        this.name + 
+        '\nstrength: ' + 
+        this.strength + 
+        '\nhitpoints: ' + 
+        this.hitpoints
+    );
+    console.log('line break')
+}
 
 // Create a prototype method called `isAlive()` which prints whether or not this character is alive
 // by determining whether their `hitpoints` are above or below zero
-// YOUR CODE HERE
-//
-
-// Create a prototype method called `attack()` which takes in a second character
+Character.prototype.isAlive = function() {
+    if (this.hitpoints > 0)
+    {
+        return true;
+        console.log(this.name + ' is ALIVE!!!')  
+    } return false;
+    console.log(this.name + ' has died....')
+}
+// Create a prototype method called `attack()` which takes in a second caracter
 // and subtracts this character's `strength` from their `hitpoints`
-// YOUR CODE HERE
-//
+Character.prototype.attack = function(enemy) {
+    this.enemy
+}
 
 // =============================================================
 

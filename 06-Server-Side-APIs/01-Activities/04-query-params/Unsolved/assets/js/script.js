@@ -1,15 +1,14 @@
 function myFunction() {
-  var searchTerm = document.getElementById('searchTerm').value;
+  var searchTerm = document.querySelector('#searchTerm').value;
   // Create a variable to hold the value of rating
-  // YOUR CODE HERE
-  //
+  var rating = document.querySelector('#rating').value;
   fetch(
     'https://api.giphy.com/v1/gifs/search?q=' +
       searchTerm +
       // Add the rating parameter
-      // YOUR CODE HERE
-      //
-      // Remember to add your API key
+      '&rating=' +
+      rating +
+      '&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1'
   )
     .then(function(response) {
       return response.json();

@@ -5,6 +5,18 @@ var msgDiv = document.querySelector("#msg");
 var userEmailSpan = document.querySelector("#user-email");
 var userPasswordSpan = document.querySelector("#user-password");
 
+function renderLastRegistered() {
+  var email = localStorage.getItem("email");
+  var password = localStorage.getItem("password");
+
+  if (email && password === null) {
+    return;
+  }
+
+  userEmailSpan.textContent = email;
+  userPasswordSpan.textContent = password;
+}
+
 renderLastRegistered();
 
 function displayMessage(type, message) {
@@ -12,15 +24,8 @@ function displayMessage(type, message) {
   msgDiv.setAttribute("class", type);
 }
 
-function renderLastRegistered() {
-  // Fill in code here to retrieve the last email and password.
-  // If they are null, return early from this function
-  // Else set the text of the userEmailSpan and userPasswordSpan 
-  // to the corresponding values form local storgage
-  
-}
 
-signUpButton.addEventListener("click", function(event) {
+signUpButton.addEventListener("click", function (event) {
   event.preventDefault();
 
   var email = document.querySelector("#email").value;
@@ -33,6 +38,8 @@ signUpButton.addEventListener("click", function(event) {
   } else {
     displayMessage("success", "Registered successfully");
 
-  // Save email and password to localStorage and render the last registered.
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    renderLastRegistered();
   }
 });
