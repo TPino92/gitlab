@@ -11,14 +11,14 @@ const yoda = {
   name: 'Yoda',
   role: 'Jedi Master',
   age: 900,
-  forcePoints: 2000
+  midichlorians: 2000
 };
 
 const darthmaul = {
   name: 'Darth Maul',
   role: 'Sith Lord',
   age: 200,
-  forcePoints: 1200
+  midichlorians: 1200
 };
 
 // Create a data object for the character, Obi Wan Kenobi
